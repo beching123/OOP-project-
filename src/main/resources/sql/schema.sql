@@ -1,0 +1,51 @@
+CREATE TABLE users (
+  id BIGSERIAL PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
+  password_hash VARCHAR(200) NOT NULL,
+  roles TEXT NOT NULL,
+  permissions TEXT NOT NULL
+);
+
+CREATE TABLE products (
+  id BIGSERIAL PRIMARY KEY,
+  barcode VARCHAR(100) NOT NULL UNIQUE,
+  name VARCHAR(255) NOT NULL,
+  price NUMERIC(19,2) NOT NULL,
+  stock INTEGER NOT NULL DEFAULT 0,
+  version INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE orders (
+  id BIGSERIAL PRIMARY KEY,
+  status VARCHAR(50) NOT NULL,
+  total NUMERIC(19,2) NOT NULL,
+  tax NUMERIC(19,2) NOT NULL,
+  customer_id BIGINT,
+  cashier_id BIGINT,
+  created_at TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
+  version INTEGER NOT NULL DEFAULT 0
+);
+
+CREATE TABLE order_items (
+  id BIGSERIAL PRIMARY KEY,
+  order_id BIGINT NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+  product_id BIGINT NOT NULL,
+  product_name VARCHAR(255) NOT NULL,
+  quantity INTEGER NOT NULL,
+  unit_price NUMERIC(19,2) NOT NULL
+);
+
+CREATE TABLE app_settings (
+  key VARCHAR(200) PRIMARY KEY,
+  value TEXT NOT NULL
+);
+
+CREATE TABLE audit_records (
+  id BIGSERIAL PRIMARY KEY,
+  timestamp TIMESTAMP WITHOUT TIME ZONE NOT NULL DEFAULT NOW(),
+  user_id BIGINT NOT NULL,
+  user_username VARCHAR(100) NOT NULL,
+  action VARCHAR(100) NOT NULL,
+  details TEXT NOT NULL,
+  order_id BIGINT
+);
