@@ -23,6 +23,16 @@ public interface UserRepo {
     Optional<User> findByUsername(String username);
 
     /**
+     * Find a user by ID.
+     */
+    Optional<User> findById(Long id);
+
+    /**
+     * Find a user by email.
+     */
+    Optional<User> findByEmail(String email);
+
+    /**
      * Persist a new or updated user record.
      */
     User save(User user);

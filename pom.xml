@@ -5,11 +5,10 @@
   <version>0.1.0</version>
   <packaging>jar</packaging>
   <name>Madam E-Commerce</name>
-  <description>Skeleton project for Madam's e-commerce Vaadin application.</description>
+  <description>Madam's e-commerce REST API backend (Spring Boot).</description>
   <properties>
     <java.version>17</java.version>
     <spring.boot.version>3.2.0</spring.boot.version>
-    <vaadin.version>24.0.4</vaadin.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -53,14 +52,26 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>com.vaadin</groupId>
-      <artifactId>vaadin-spring-boot-starter</artifactId>
-      <version>${vaadin.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-api</artifactId>
+      <version>0.12.3</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-impl</artifactId>
+      <version>0.12.3</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-jackson</artifactId>
+      <version>0.12.3</version>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
@@ -74,6 +85,7 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring.boot.version}</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -81,6 +93,7 @@
         <version>3.11.0</version>
         <configuration>
           <release>${java.version}</release>
+          <parameters>true</parameters>
         </configuration>
       </plugin>
       <plugin>

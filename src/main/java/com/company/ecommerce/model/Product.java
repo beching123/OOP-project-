@@ -30,10 +30,21 @@ public class Product {
     private String barcode;
     // field declaration for name
     private String name;
+    private String description;
     // field declaration for price
     private BigDecimal price;
+    private BigDecimal salePrice;
     // field declaration for stock
     private int stock;
+    private String category;
+    private Long categoryId;
+    private String images;
+    private String imageUrl;
+    private String sku;
+    private double rating;
+    private int reviews;
+    private boolean featured;
+    private boolean bestSeller;
     // field declaration for version
     private int version;
 
@@ -129,6 +140,29 @@ public class Product {
         // assign value to object field
         this.version = version;
     }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public BigDecimal getSalePrice() { return salePrice; }
+    public void setSalePrice(BigDecimal salePrice) { this.salePrice = salePrice; }
+    public String getCategory() { return category; }
+    public void setCategory(String category) { this.category = category; }
+    public Long getCategoryId() { return categoryId; }
+    public void setCategoryId(Long categoryId) { this.categoryId = categoryId; }
+    public String getImages() { return images; }
+    public void setImages(String images) { this.images = images; }
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public String getSku() { return sku; }
+    public void setSku(String sku) { this.sku = sku; }
+    public double getRating() { return rating; }
+    public void setRating(double rating) { this.rating = rating; }
+    public int getReviews() { return reviews; }
+    public void setReviews(int reviews) { this.reviews = reviews; }
+    public boolean isFeatured() { return featured; }
+    public void setFeatured(boolean featured) { this.featured = featured; }
+    public boolean isBestSeller() { return bestSeller; }
+    public void setBestSeller(boolean bestSeller) { this.bestSeller = bestSeller; }
 
     // annotation applied to the following declaration
     @Override

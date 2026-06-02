@@ -18,7 +18,7 @@ import com.company.ecommerce.model.StaleDataException;
  * <p>It manages commit/rollback behavior and retries on optimistic locking conflicts
  * by rerunning the enclosed task up to three times.
  */
-@Component
+@Component("jdbcTransactionManager")
 public class TransactionManager {
 
     // method declaration for method

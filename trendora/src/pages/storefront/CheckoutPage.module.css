@@ -1,0 +1,481 @@
+.checkoutPage {
+  background-color: var(--color-bg-secondary);
+  min-height: calc(100vh - var(--navbar-height));
+  padding-bottom: var(--space-16);
+}
+
+.checkoutContainer {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-12);
+  padding-top: var(--space-10);
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .checkoutContainer {
+    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
+  }
+}
+
+/* ---------- Left Col (Steps) ---------- */
+.stepsCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.stepCard {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.stepActive {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-soft-hover);
+}
+
+.stepDisabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  padding: var(--space-6);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stepIndicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-right: var(--space-4);
+}
+
+.stepActive .stepIndicator {
+  background-color: var(--color-accent);
+}
+
+.stepDisabled .stepIndicator {
+  background-color: var(--color-border-strong);
+  color: var(--color-text-muted);
+}
+
+.stepTitle {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  flex: 1;
+}
+
+.editBtn {
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.editBtn:hover {
+  text-decoration: underline;
+}
+
+.stepBody {
+  padding: var(--space-6);
+}
+
+/* Forms */
+.label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-secondary);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.inputError {
+  border-color: var(--color-error);
+}
+
+/* Delivery Grid */
+.methodGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.methodCard {
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.methodCard:hover {
+  border-color: var(--color-primary-soft);
+}
+
+.methodActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+/* Payment selection */
+.paymentRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.paymentRow:hover {
+  background-color: var(--color-bg-secondary);
+}
+
+.paymentActive {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+.paymentMethodInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+}
+
+.dealCodeBox {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 18%, var(--color-border));
+  background: var(--color-primary-soft);
+}
+
+.dealCodeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.dealCodeTitle {
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.dealCodeEmail {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.dealCodeRow {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.dealCodeInput {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.dealCodeButton {
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.dealCodeNote {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.dealCodeMessage {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ---------- Right Col (Summary) ---------- */
+.summaryCol {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-8));
+}
+
+.summaryBox {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.itemsScroll {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.miniItem {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.miniImage {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+/* ---------- Payment Option Button ---------- */
+.paymentOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.paymentOption:hover {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.paymentOptionActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.paymentOptionIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.paymentOptionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ---------- Location Info ---------- */
+.locationInfo {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  border: 1px solid var(--color-border);
+}
+
+.locationInfo p {
+  margin: 0;
+  color: var(--color-text);
+}
+
+/* ---------- Checkpoint Options ---------- */
+.checkpointOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.checkpointOption:hover {
+  border-color: var(--color-primary);
+}
+
+.checkpointOptionActive {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+}
+
+.checkpointRadio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.checkpointOptionActive .checkpointRadio {
+  border-color: var(--color-primary);
+}
+
+.radioDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.radioDotActive {
+  background: var(--color-primary);
+}
+
+.checkpointInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ---------- Total Box ---------- */
+.totalBox {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+}
+
+.totalRowFinal {
+  border-top: 2px solid var(--color-border-strong);
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+/* ---------- Cash Info ---------- */
+.cashInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.cashInfo p {
+  margin: 0;
+}
+
+/* ---------- Success Screen ---------- */
+.successOverlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.successCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  padding: var(--space-10);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+}
+
+.successIcon {
+  color: var(--color-success);
+  margin-bottom: var(--space-4);
+}
+
+.successOrderInfo {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.successInfoRow {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+}
+
+.successInfoRow:last-child {
+  border-bottom: none;
+}
+
+.successInfoRow span {
+  color: var(--color-text-muted);
+}
+
+.successInfoRow strong {
+  font-weight: 700;
+}

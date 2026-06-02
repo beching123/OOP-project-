@@ -47,9 +47,12 @@ public class Order {
     private BigDecimal tax;
     // field declaration for customerId
     private Long customerId;
-    // field declaration for cashierId
+    private String customerName;
     private Long cashierId;
-    // field declaration for createdAt
+    private String paymentMethod;
+    private String shippingAddress;
+    private String deliveryMethod;
+    private BigDecimal subtotal;
     private LocalDateTime createdAt;
     // field declaration for version
     private int version;
@@ -148,11 +151,24 @@ public class Order {
 
     // method declaration for setCustomerId
     public void setCustomerId(Long customerId) {
-        // assign value to object field
         this.customerId = customerId;
     }
 
-    // method declaration for getCashierId
+    public String getCustomerName() { return customerName; }
+    public void setCustomerName(String customerName) { this.customerName = customerName; }
+
+    public String getPaymentMethod() { return paymentMethod; }
+    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
+
+    public String getShippingAddress() { return shippingAddress; }
+    public void setShippingAddress(String shippingAddress) { this.shippingAddress = shippingAddress; }
+
+    public String getDeliveryMethod() { return deliveryMethod; }
+    public void setDeliveryMethod(String deliveryMethod) { this.deliveryMethod = deliveryMethod; }
+
+    public BigDecimal getSubtotal() { return subtotal; }
+    public void setSubtotal(BigDecimal subtotal) { this.subtotal = subtotal; }
+
     public Long getCashierId() {
         // return statement from method
         return cashierId;
@@ -180,6 +196,10 @@ public class Order {
     public int getVersion() {
         // return statement from method
         return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 
     // annotation applied to the following declaration

@@ -1,0 +1,58 @@
+package com.company.ecommerce.rest.dto;
+
+public class CustomerResponse {
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String name;
+    private String fullName;
+    private String email;
+    private String phone;
+    private String location;
+    private String avatar;
+    private String role;
+    private String createdAt;
+    private Integer orderCount;
+    private java.math.BigDecimal totalSpent;
+
+    public CustomerResponse() {}
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getFirstName() { return firstName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() { return lastName; }
+    public void setLastName(String lastName) { this.lastName = lastName; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getFullName() { return fullName; }
+    public void setFullName(String fullName) { this.fullName = fullName; }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
+
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    public String getAvatar() { return avatar; }
+    public void setAvatar(String avatar) { this.avatar = avatar; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
+
+    public String getCreatedAt() { return createdAt; }
+    public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
+
+    public Integer getOrderCount() { return orderCount; }
+    public void setOrderCount(Integer orderCount) { this.orderCount = orderCount; }
+
+    public java.math.BigDecimal getTotalSpent() { return totalSpent; }
+    public void setTotalSpent(java.math.BigDecimal totalSpent) { this.totalSpent = totalSpent; }
+}

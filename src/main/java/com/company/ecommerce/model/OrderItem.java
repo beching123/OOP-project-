@@ -24,6 +24,7 @@ public class OrderItem {
     private int quantity;
     // field declaration for unitPrice
     private BigDecimal unitPrice;
+    private String imageUrl;
 
     // method declaration for OrderItem
     public OrderItem() {
@@ -88,6 +89,9 @@ public class OrderItem {
         // assign value to object field
         this.unitPrice = unitPrice;
     }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
     // annotation applied to the following declaration
     @Override

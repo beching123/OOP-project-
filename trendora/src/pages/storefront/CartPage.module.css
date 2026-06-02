@@ -1,0 +1,223 @@
+.cartPage {
+  background-color: var(--color-bg);
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--space-8);
+  text-align: center;
+}
+
+.emptyCartIcon {
+  width: 96px;
+  height: 96px;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.cartLayout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-12);
+  align-items: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .cartLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Items List ---------- */
+.itemsList {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cartItem {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cartItem:last-child {
+  border-bottom: none;
+}
+
+.itemImageWrapper {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: var(--leading-tight);
+}
+
+.itemName:hover {
+  color: var(--color-primary);
+}
+
+.itemVariant {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.itemPrice {
+  font-weight: 700;
+  font-size: var(--text-lg);
+}
+
+.itemPriceStack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.itemOriginalPrice {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  overflow: hidden;
+  width: max-content;
+}
+
+.qtyBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+}
+
+.qtyBtn:hover:not(:disabled) {
+  background-color: var(--color-border);
+}
+
+.qtyBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qtyValue {
+  width: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.removeBtn {
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  padding: var(--space-2);
+}
+
+.removeBtn:hover {
+  color: var(--color-error);
+}
+
+@media (max-width: 640px) {
+  .cartItem {
+    flex-direction: column;
+  }
+  .itemImageWrapper {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+}
+
+/* ---------- Summary Section ---------- */
+.summarySection {
+  position: sticky;
+  top: calc(var(--navbar-height) + var(--space-8));
+}
+
+.summaryCard {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-8);
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  font-size: var(--text-base);
+}
+
+.freeShippingBanner {
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
+.checkoutTrust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  color: var(--color-text-secondary);
+}

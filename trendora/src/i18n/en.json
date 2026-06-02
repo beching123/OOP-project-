@@ -1,0 +1,16 @@
+{
+  "common": {
+    "brandName": "TRENDORA",
+    "tagline": "Affordable Quality, Delivered to You"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About Us",
+    "contact": "Contact",
+    "cart": "Cart",
+    "trackOrder": "Track Order",
+    "returnPolicy": "Return Policy",
+    "deals": "Deals"
+  }
+}
